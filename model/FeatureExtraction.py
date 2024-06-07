@@ -42,8 +42,14 @@ def extract_features(audio_path):
     features['spread2'] = np.std(pitches)
     features['D2'] = np.var(pitches)
     features['PPE'] = entropy(pitches)
-    
+    try :
+        print(features)
+    except() :
+        print("in the error of extraction")   
     return features
 # for item in temp :
 #     print(item ,temp[item])
-print(extract_features('recorded_audio.wav'))
+# try :
+#     print(extract_features('recorded_audio.wav'))
+# except :
+#     print("in the error of extraction")    

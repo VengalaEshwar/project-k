@@ -6,6 +6,7 @@ from tensorflow.keras.models import load_model
 dl_model = load_model('trained-models/deep_learning_model.h5') 
 
 def predictParkinson(test_case):
+    print(test_case)
     # Convert the test_case dictionary to a DataFrame
     test_df = pd.DataFrame([test_case])  # Note: Wrap test_case in a list to handle single row DataFrame
     # Drop unnecessary columns
@@ -19,8 +20,13 @@ def predictParkinson(test_case):
     ]
     test_df = test_df.drop(columns_to_drop, axis=1)
     
-    # Make predictions using the loaded deep learning model
     dl_prediction = dl_model.predict(test_df.values).argmax(axis=1)
+    return int(dl_prediction[0])
+    # Make predictions using the loaded deep learning model
+    # try :
+    #     dl_prediction = dl_model.predict(test_df.values).argmax(axis=1)
+    # except :
+    #     print("in the detect ")    
     
     return dl_prediction[0]
 
