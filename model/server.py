@@ -29,6 +29,7 @@ def predict():
             features = fe.extract_features(filepath)
             # Assuming you have a model loaded and predict function
             prediction = detect.predictParkinson(features)
+            print({'prediction': prediction})
             return jsonify({'prediction': prediction}), 200
         except Exception as e:
             return jsonify({'error': str(e)}), 500
