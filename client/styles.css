@@ -1,0 +1,215 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('bg2.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode:color-burn;
+    color: yellow;
+}
+/* Watermark Logo Styles */
+/* .watermark-container {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    z-index: 9999; 
+} */
+/* Style for the input file */
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+/* Style for the label */
+.fileInputLabel {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.fileInputLabel:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+
+
+/* Header Styles */
+header {
+    background-color: #0d1669; /*#0d1669;*/
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; /* Adjust the width as needed */
+    margin-right: 10px; /* Adjust the spacing between the logo and text */
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin-left: 20px;
+    color: #fff; /* Keep the text color white */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0e0a0a; /* Keep the text color white */
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #000; /* Change text color to black */
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* About Section Styles */
+.about-section {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000; /* Change text color to black */
+}
+
+.about-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #000; /* Change text color to black */
+}
+
+/* Features Section Styles */
+.features-section {
+    padding: 100px 0;
+}
+
+.features-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #000; /* Change text color to black */
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000; /* Change text color to black */
+}
+
+.feature p {
+    font-size: 16px;
+    color: #000; /* Change text color to black */
+}
+
+/* Contact Section Styles */
+.contact-section {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff; /* Keep the text color white */
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff; /* Keep the text color white */
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #290968;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}

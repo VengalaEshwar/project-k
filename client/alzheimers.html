@@ -1,0 +1,45 @@
+<!-- alzheimers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer's Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"> <!-- Make the logo clickable and link to home -->
+                <img src="logo.png" alt="NeuroPredict Logo">
+            </a>
+            <h1>Neurological Disease Prediction System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="alzheimers.html" class="active">Alzheimer's</a></li> 
+                <li><a href="parkinsons.html">Parkinson's</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="active">
+        <div class="hero">
+            <h2>Alzheimer's Disease Prediction</h2>
+            <form action="/predict_alzheimers" method="post" enctype="multipart/form-data"> <!-- Form to upload image -->
+                <input type="file" name="image" id="imageInput" accept="image/*">
+<label for="imageInput" class="fileInputLabel">Choose an image</label>
+                <br><br><br>
+                <button type="submit" class="btn">Predict</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 NeuroPredict. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

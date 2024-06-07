@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurological Disease Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+            <img src="logo.png" alt="NeuroPredict Logo">
+            </a>
+            <h1>
+                Neurological Disease Prediction System </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="active">
+        <div class="hero">
+            <h2 style="font-size: 46px;text-decoration : underline;">Welcome to NeuroPredict: Your Neurological Health Companion</h2>
+            <p style="color:rgb(225, 10, 10);font-size: 50px;"><b>Discover the future of neurological healthcare with NeuroPredict. Our advanced AI system offers early disease detection and personalized insights for proactive wellness.</b></p>
+            <a href="option.html"style="background-color: rgb(136, 143, 156);color:black" class="btn"><b>Check now<b></b></a>
+        </div>
+    </section>
+    
+    <section id="about" style="display: none;">
+        <div class="about-section">
+            <h2>About NeuroPredict</h2>
+            <p>Our endeavor employs cutting-edge algorithms like convolutional neural networks (CNNs) and decision trees to pioneer neurological disease prediction. By integrating various data streams such as brain scans, genetic markers, and medical histories, our goal is to create an innovative tool for early detection of conditions like Alzheimer's and Parkinson's. This proactive approach aims to facilitate timely interventions, improving patient outcomes and enabling personalized treatment strategies.</p>
+        </div>
+    </section>
+    <section id="features" style="display: none;">
+        <div class="features-section">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <h3>Advanced AI Algorithms</h3>
+                <p>Utilizes state-of-the-art neural networks for accurate disease prediction.</p>
+            </div>
+            <div class="feature">
+                <h3>Data Visualization</h3>
+                <p>Provides intuitive visualizations of patient data for better understanding.</p>
+            </div>
+            <div class="feature">
+                <h3>User-friendly Interface</h3>
+                <p>Easy-to-use interface for healthcare professionals and patients.</p>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br>
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 NeuroPredict. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript to toggle display of sections based on clicked link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const sectionId = link.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = section.id === sectionId ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
