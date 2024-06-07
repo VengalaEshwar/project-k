@@ -1,52 +1,73 @@
-import sys
 import numpy as np
-import librosa
-import json
-from scipy.stats import entropy
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+import joblib
+from sklearn.metrics import accuracy_score
+from joblib import dump, load
 
-def extract_features(audio_path):
-    y, sr = librosa.load(audio_path, sr=None)
-    features = {}
-    
-    # Fundamental Frequency (Fo), Minimum (Flo), and Maximum (Fhi)
-    pitches, magnitudes = librosa.core.piptrack(y=y, sr=sr)
-    pitches = pitches[magnitudes > np.median(magnitudes)]
-    features['MDVP:Fo(Hz)'] = np.mean(pitches)
-    features['MDVP:Fhi(Hz)'] = np.max(pitches)
-    features['MDVP:Flo(Hz)'] = np.min(pitches)
-    
-    # Jitter calculations
-    features['MDVP:Jitter(%)'] = np.std(pitches) / np.mean(pitches) * 100
-    features['MDVP:Jitter(Abs)'] = np.std(pitches)
-    features['MDVP:RAP'] = np.mean(np.abs(np.diff(pitches)))
-    features['MDVP:PPQ'] = np.mean(np.abs(np.diff(pitches, n=5)))
-    features['Jitter:DDP'] = features['MDVP:RAP'] * 3
-    
-    # Shimmer calculations
-    S = np.abs(librosa.stft(y))
-    features['MDVP:Shimmer'] = np.std(S) / np.mean(S)
-    features['MDVP:Shimmer(dB)'] = 20 * np.log10(features['MDVP:Shimmer'])
-    features['Shimmer:APQ3'] = np.mean(np.abs(np.diff(S, n=3)))
-    features['Shimmer:APQ5'] = np.mean(np.abs(np.diff(S, n=5)))
-    features['MDVP:APQ'] = np.mean(np.abs(np.diff(S, n=11)))
-    features['Shimmer:DDA'] = features['Shimmer:APQ3'] * 3
-    
-    # NHR and HNR calculations
-    harmonic, percussive = librosa.effects.hpss(y)
-    features['NHR'] = np.mean(percussive) / np.mean(harmonic)
-    features['HNR'] = np.mean(harmonic) / np.mean(percussive)
-    
-    # RPDE, DFA, Spread1, Spread2, D2, PPE
-    features['RPDE'] = entropy(pitches)
-    features['DFA'] = np.std(np.diff(pitches))
-    features['spread1'] = np.max(pitches) - np.min(pitches)
-    features['spread2'] = np.std(pitches)
-    features['D2'] = np.var(pitches)
-    features['PPE'] = entropy(pitches)
-    
-    return features
+#-----------------------------------------------------------------------------------
+#                           DATA PREPROCESSING
 
-if __name__ == "__main__":
-    audio_path = sys.argv[1]
-    features = extract_features(audio_path)
-    print(json.dumps(features))
+# Load the dataset
+df = pd.read_csv("parkinsons.csv")
+
+# Check for null values
+print("Null values per column before dropping any rows:")
+print(df.isnull().sum())
+
+# Convert numeric columns to numeric data types (coercing errors to NaN)
+numeric_columns = df.columns[1:]  # excluding 'name' column
+df[numeric_columns] = df[numeric_columns].apply(pd.to_numeric, errors='coerce')
+
+# Drop rows with any missing values
+df.dropna(inplace=True)
+
+# Separate features and target
+x = df.drop("status", axis=1)
+y = df["status"]
+
+# Drop the 'name' column as it is not a feature
+x = x.drop("name", axis=1)
+
+# Check for non-numeric values
+print("Data types after conversion:")
+print(x.dtypes)
+
+# Split the dataset into training and testing sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+
+# Data scaling
+scaler = StandardScaler()
+x_train = scaler.fit_transform(x_train)
+x_test = scaler.transform(x_test)
+
+#----------------------------------------------------------------------------------
+#                                 DEEP LEARNING
+# Define the model
+model = Sequential()
+model.add(Dense(64, input_dim=x_train.shape[1], activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train the model
+model.fit(x_train, y_train, epochs=60, batch_size=10, validation_data=(x_test, y_test))
+
+# Save the model and the scaler
+model.save('deep_learning_model.h5')
+joblib.dump(scaler, 'scaler.joblib')
+
+print("Model and scaler saved successfully.")
+
+# Make predictions on the test set
+y_pred_prob = model.predict(x_test)
+y_pred = (y_pred_prob >= 0.5).astype(int)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Model accuracy on test set: {accuracy * 100:.2f}%")
