@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="parkinsons.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="NeuroPredict Logo">
+            </a>
+            <h1>Neurological Disease Prediction System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="alzheimers.html" class="active">Alzheimer's</a></li> 
+                <li><a href="parkinsons.html">Parkinson's</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="active">
+        <div class="hero">
+            <h2>Parkinson's Disease Prediction</h2>
+            <button id="recordButton">Record</button>
+            <button id="stopButton" disabled>Stop</button>
+            <button id="uploadButton" disabled>Upload</button>
+            <audio id="audioPlayback" controls></audio>
+            <p id="result"></p>
+            <form id="audioUploadForm" >
+                <input type="file" id="audioFileInput" name="audio" >
+                <label for="audioFileInput" class="fileInputLabel">Choose audio</label>
+                <br><br>
+                <button type="submit" id="submit-btn">Upload</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 NeuroPredict. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

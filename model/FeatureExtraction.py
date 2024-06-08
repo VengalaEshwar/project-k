@@ -2,11 +2,14 @@ import numpy as np
 import librosa
 import pandas as pd
 from scipy.stats import entropy
-
+import os
 def extract_features(audio_path):
+    audio_path='d:\\coding\\temp\project-rtrp\\modelrecorded_audio.wav'
+    print("entered the fe_1",audio_path)
+    print(os.path.exists(audio_path))
     y, sr = librosa.load(audio_path, sr=None)
     features = {}
-    
+    print("entered the fe_1 loaded")
     # Fundamental Frequency (Fo), Minimum (Flo), and Maximum (Fhi)
     pitches, magnitudes = librosa.core.piptrack(y=y, sr=sr)
     pitches = pitches[magnitudes > np.median(magnitudes)]
@@ -47,6 +50,7 @@ def extract_features(audio_path):
     except() :
         print("in the error of extraction")   
     return features
+print(extract_features("recorded_audio.wav"))
 # for item in temp :
 #     print(item ,temp[item])
 # try :
