@@ -16,10 +16,12 @@ app = Flask(__name__)
 @app.route('/predictparkinsons', methods=['POST'])
 def predict():
     if 'audio' not in request.files:
+        print("error" ,{'error': str(e)})
         return jsonify({'error': 'No audio file part'}), 400
 
     file = request.files['audio']
     if file.filename == '':
+        print("error")
         return jsonify({'error': 'No selected file'}), 400
 
     if file:
@@ -37,7 +39,7 @@ def predict():
             print({'prediction': prediction})
             return jsonify({'prediction': prediction}), 200
         except Exception as e:
-            print({'error': str(e)})
+            print("error" ,{'error': str(e)})
             return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
