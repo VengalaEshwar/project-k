@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neurological Disorder Predictor</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="header-1">
       <div class="header-2">
-        <div class="nav-bar">
-          <div class="logo"></div>
-          <a href="#">home</a>
-          <a href="#">about us</a>
-          <a href="#">contact us</a>
-          <a href="#">products</a>
-          <a href="#">log in</a>
+        <div class="nav-bar-1">
+          <div class="nav-bar">
+            <div class="logo"></div>
+            <a href="#">home</a>
+            <a href="#">about us</a>
+            <a href="#">contact us</a>
+            <a href="#">products</a>
+            <a href="#">log in</a>
+          </div>
         </div>
         <div class="header-content-box">
           <div class="header-content-box-left">
@@ -32,51 +36,151 @@
       </div>
     </div>
     <div class="home-section">
-      <div class="red-1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-        beatae ut est repellendus, nulla ratione ea, aliquid quaerat natus
-        corrupti quibusdam esse deleniti praesentium? Quibusdam perferendis,
-        placeat voluptatibus, repellendus voluptatem accusamus alias non
-        impedit autem itaque repellat maxime odio explicabo quaerat amet nobis
-        voluptas optio minima quisquam quod. Quis sunt quas consequatur
-        temporibus et ab, praesentium nihil assumenda reprehenderit tempora
-        magni ex commodi nostrum molestiae. Ipsum ex saepe deserunt quia
-        eveniet illo doloremque expedita, nisi cupiditate, fugiat repellendus
-        a ipsa enim nulla iusto facilis est consequatur, omnis id assumenda
-        maiores magnam accusamus harum. Voluptatibus, facilis? Maiores
-        temporibus natus error commodi!
+      <!-- card-1 -->
+
+      <div class="card card-1">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>problem</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
+        </div>
       </div>
-      <div class="cards">
-        <div class="card red">
-          <p class="tip">Hover Me</p>
-          <p class="second-text">Lorem Ipsum</p>
+
+      <!-- card-2 -->
+      <div class="card card-2">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>vision</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
         </div>
-        <div class="card blue">
-          <p class="tip">Hover Me</p>
-          <p class="second-text">Lorem Ipsum</p>
-        </div>
-        <div class="card green">
-          <p class="tip">Hover Me</p>
-          <p class="second-text">Lorem Ipsum</p>
+      </div>
+
+      <!-- card-3 -->
+      <div class="card card-3">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>conclusion</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
         </div>
       </div>
     </div>
-    <div class="product">
-      <div class="steps">
-        <h1 style="text-align: center; margin-top: 5%">
-          parkinsons prediction tool
-        </h1>
-        <h2>steps</h2>
-      </div>
-      <div class="predict">
-        <!-- <form id="audioUploadForm" >
-                <input type="file" id="audioFileInput" name="audio" >
-                <label for="audioFileInput" class="fileInputLabel">Choose audio</label>
-                <br><br>
-                <button type="submit" id="submit-btn">Upload</button>
-            </form> -->
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="product-outer">
+      <div class="product">
+        <div class="steps">
+          <div class="head-steps">Parkinsons Prediction Tool</div>
+          <div class="body-steps"></div>
+        </div>
+
+        <div class="predict">
+
+          <!-- This is drag and drop feature -->
+          
+          <form id="audioUploadForm" >
+            <label for="input-file" id="drop-area">
+              <input type="file" accept="audio/*" id="input-file" hidden />
+              <div id="img-view">
+                <img src="assets/upload.jpg" />
+                <p>Drag and drop or click here<br />to upload image</p>
+                <span>upload any images from desktop</span>
+              </div>
+            </label>
+            </form>
+          <button class="submit-btn">predict</button>
+          <!-- <form id="audioUploadForm" >
+              </form> -->
+        </div>
       </div>
     </div>
-    <div class="contact">></div>
+    <div class="feedback">
+      <div class="flex flex-col items-center justify-center h-screen dark f-1">
+        <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold text-gray-200 mb-4">
+            Product Feedback Form
+          </h2>
+
+          <form class="flex flex-col">
+            <input
+              placeholder="Full Name"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="text"
+            />
+            <input
+              placeholder="Email"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="email"
+            />
+            <select
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              id="product"
+            >
+              <option value="product-1">Product 1</option>
+              <option value="product-2">Product 2</option>
+              <option value="product-3">Product 3</option>
+            </select>
+            <input
+              placeholder="Rating (1-5)"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="number"
+            />
+            <textarea
+              placeholder="Feedback"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              name="feedback"
+            ></textarea>
+
+            <button
+              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <p>&copy; 2024 NeuroPredict. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
+

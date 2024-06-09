@@ -55,26 +55,3 @@ document.getElementById("uploadButton").addEventListener("click", async () => {
   audioChunks = [];
   document.getElementById("uploadButton").disabled = true;
 });
-let form=document.getElementById("audioUploadForm");
-form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formData = new FormData(form);
-  
-    fetch("http://127.0.0.1:5001/predictparkinsons", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error) {
-          document.getElementById("result").innerText = "Error: " + data.error;
-        } else {
-          document.getElementById("result").innerText =
-            "Prediction: " + data.prediction;
-        }
-        
-      })
-      .catch((error) => {
-        document.getElementById("result").innerText = "Error: " + error.message;
-      });
-  });
