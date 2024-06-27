@@ -21,6 +21,7 @@ def predictParkinson(test_case):
     test_df = test_df.drop(columns_to_drop, axis=1)
     
     dl_prediction = dl_model.predict(test_df.values).argmax(axis=1)
+    
     return int(dl_prediction[0])
     # Make predictions using the loaded deep learning model
     # try :
@@ -55,5 +56,5 @@ test_case = {
     'D2': 2.301442,
     'PPE': 0.284654153
 }
-print(predictParkinson(test_case))
+# print(predictParkinson(test_case))
 # Print the prediction

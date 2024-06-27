@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neurological Disorder Predictor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="header-1">
+      <div class="header-2">
+        <div class="nav-bar-1">
+          <div class="nav-bar">
+            <div class="logo"></div>
+            <a href="#">home</a>
+            <a href="#">about us</a>
+            <a href="#">contact us</a>
+            <a href="#">products</a>
+            <a href="#">log in</a>
+          </div>
+        </div>
+        <div class="header-content-box">
+          <div class="header-content-box-left">
+            <div class="header-title">heading</div>
+            <p class="header-title-p">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate esse ut, reiciendis possimus natus officia dolore
+              necessitatibus magnam qui temporibus ipsam sit? Aspernatur
+              delectus autem ullam necessitatibus aperiam natus quaerat.
+            </p>
+          </div>
+          <div class="header-content-box-right"></div>
+        </div>
+      </div>
+    </div>
+    <div class="home-section">
+      <!-- card-1 -->
+
+      <div class="card card-1">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>problem</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
+        </div>
+      </div>
+
+      <!-- card-2 -->
+      <div class="card card-2">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>vision</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
+        </div>
+      </div>
+
+      <!-- card-3 -->
+      <div class="card card-3">
+        <div class="first-content"></div>
+        <div class="second-content">
+          <span>conclusion</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            veritatis dicta hic totam, eveniet sed tenetur sit voluptatem
+            explicabo a quis eaque harum necessitatibus modi optio pariatur eos
+            accusamus rem non beatae. Explicabo cupiditate repellendus repellat
+            optio fugiat aut amet culpa perferendis quia vero repudiandae
+            voluptate consequuntur, sint id rem corporis quo nobis. Iusto nam
+            rerum saepe, iste cumque minus molestias, quidem provident libero
+            corporis reprehenderit exercitationem sunt aut in, harum neque ipsam
+            est facere quam nesciunt maiores animi eum fugiat! Quas a cum,
+            tenetur atque ad eum, odit animi nobis voluptas minus aut modi sint,
+            dolores quo aspernatur assumenda?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+    <div class="product-outer">
+      <div class="product">
+        <div class="steps">
+          <div class="head-steps">Parkinsons Prediction Tool</div>
+          <div class="body-steps"></div>
+        </div>
+
+        <div class="predict">
+
+          <!-- This is drag and drop feature -->
+          
+          <form id="audioUploadForm" >
+            <label for="input-file" id="drop-area">
+              <input type="file" accept="audio/*" id="input-file" hidden />
+              <div id="img-view">
+                <img src="assets/upload.jpg" />
+                <p>Drag and drop or click here<br />to upload image</p>
+                <span>upload any images from desktop</span>
+              </div>
+            </label>
+          <button  type="submit" class="submit-btn">predict</button>
+            </form>
+          <!-- <form id="audioUploadForm" >
+              </form> -->
+        </div>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="flex flex-col items-center justify-center h-screen dark f-1">
+        <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold text-gray-200 mb-4">
+            Product Feedback Form
+          </h2>
+
+          <form class="flex flex-col">
+            <input
+              placeholder="Full Name"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="text"
+            />
+            <input
+              placeholder="Email"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="email"
+            />
+            <select
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              id="product"
+            >
+              <option value="product-1">Product 1</option>
+              <option value="product-2">Product 2</option>
+              <option value="product-3">Product 3</option>
+            </select>
+            <input
+              placeholder="Rating (1-5)"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="number"
+            />
+            <textarea
+              placeholder="Feedback"
+              class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              name="feedback"
+            ></textarea>
+
+            <button
+              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <p>&copy; 2024 NeuroPredict. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
